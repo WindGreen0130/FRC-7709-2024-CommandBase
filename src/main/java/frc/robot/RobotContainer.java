@@ -29,10 +29,6 @@ public class RobotContainer {
   EndEffectorSubsystem m_endEffectorSubsystem = new EndEffectorSubsystem();
   SwerveSubsystem m_swerveSubsystem = new SwerveSubsystem();
   VisionSubsystem m_visionSubsystem = new VisionSubsystem();
-  ArmCommand m_armCommand = new ArmCommand(m_armsubsystem, 0, 0, 0);
-  ClimbCommand m_climbCommand = new ClimbCommand(m_climbSubsystem);
-  ManualDriveCommand m_manualDriveCommand = new ManualDriveCommand();
-
   public RobotContainer() {
     configureBindings();
   }
