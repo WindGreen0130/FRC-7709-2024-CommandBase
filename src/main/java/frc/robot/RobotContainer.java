@@ -4,7 +4,18 @@
 
 package frc.robot;
 
+import com.ctre.phoenix6.mechanisms.swerve.SwerveModule;
+import com.ctre.phoenix6.mechanisms.swerve.SwerveModuleConstants;
+
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.commands.ArmCommand;
+import frc.robot.commands.ClimbCommand;
+import frc.robot.commands.ManualDriveCommand;
+import frc.robot.subsystems.ArmSubsystem;
+import frc.robot.subsystems.ClimbSubsystem;
+import frc.robot.subsystems.EndEffectorSubsystem;
+import frc.robot.subsystems.SwerveSubsystem;
+import frc.robot.subsystems.VisionSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -13,6 +24,15 @@ import edu.wpi.first.wpilibj2.command.Command;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
+  ArmSubsystem m_armsubsystem = new ArmSubsystem();
+  ClimbSubsystem m_climbSubsystem = new ClimbSubsystem();
+  EndEffectorSubsystem m_endEffectorSubsystem = new EndEffectorSubsystem();
+  SwerveSubsystem m_swerveSubsystem = new SwerveSubsystem();
+  VisionSubsystem m_visionSubsystem = new VisionSubsystem();
+  ArmCommand m_armCommand = new ArmCommand(m_armsubsystem, 0, 0, 0);
+  ClimbCommand m_climbCommand = new ClimbCommand(m_climbSubsystem);
+  ManualDriveCommand m_manualDriveCommand = new ManualDriveCommand();
+
   public RobotContainer() {
     configureBindings();
   }

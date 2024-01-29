@@ -5,11 +5,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.ClimbSubsystem;
 
 public class ClimbCommand extends Command {
+  ClimbSubsystem climbSubsystem;
   /** Creates a new ClimbCommand. */
-  public ClimbCommand() {
+  public ClimbCommand(ClimbSubsystem _subsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
+    this.climbSubsystem = _subsystem;
   }
 
   // Called when the command is initially scheduled.

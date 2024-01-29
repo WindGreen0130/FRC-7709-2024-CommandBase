@@ -5,11 +5,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.SwerveSubsystem;
 
 public class ManualDriveCommand extends Command {
+  SwerveSubsystem swerveSubsystem = new SwerveSubsystem();
   /** Creates a new ManualDriveCommand. */
-  public ManualDriveCommand() {
+  public ManualDriveCommand(SwerveSubsystem _subsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
+    swerveSubsystem = _subsystem;
   }
 
   // Called when the command is initially scheduled.
